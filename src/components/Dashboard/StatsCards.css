@@ -1,0 +1,124 @@
+.stats-cards {
+  margin-bottom: 20px;
+}
+
+.stats-card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stats-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-info {
+  flex: 1;
+}
+
+.stats-title {
+  color: #6c757d;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.stats-value {
+  color: #2c2c2c;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stats-change {
+  display: flex;
+  align-items: center;
+}
+
+.stats-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.stats-card-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.stats-card-primary .stats-title,
+.stats-card-primary .stats-value {
+  color: white;
+}
+
+.stats-card-primary .stats-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.stats-card-success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.stats-card-success .stats-title,
+.stats-card-success .stats-value {
+  color: white;
+}
+
+.stats-card-success .stats-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.stats-card-warning {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: white;
+}
+
+.stats-card-warning .stats-title,
+.stats-card-warning .stats-value {
+  color: white;
+}
+
+.stats-card-warning .stats-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.stats-card-info {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #2c2c2c;
+}
+
+.stats-card-info .stats-icon {
+  background: rgba(44, 90, 160, 0.1);
+  color: #2c5aa0;
+}
+
+@media (max-width: 768px) {
+  .stats-value {
+    font-size: 20px;
+  }
+  
+  .stats-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}

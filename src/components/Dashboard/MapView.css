@@ -1,0 +1,178 @@
+.map-container {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.map-view {
+  height: 400px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Street Grid */
+.map-streets {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.street {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.street.horizontal {
+  width: 100%;
+  height: 3px;
+}
+
+.street.vertical {
+  width: 3px;
+  height: 100%;
+}
+
+.street-1 { top: 20%; }
+.street-2 { top: 45%; }
+.street-3 { top: 70%; }
+.street-4 { top: 85%; }
+.street-5 { left: 25%; }
+.street-6 { left: 50%; }
+.street-7 { left: 75%; }
+
+/* Map Areas */
+.map-area {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.area-label {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.area-1 {
+  top: 10%;
+  left: 10%;
+  width: 35%;
+  height: 30%;
+}
+
+.area-2 {
+  top: 50%;
+  left: 10%;
+  width: 35%;
+  height: 25%;
+}
+
+.area-3 {
+  top: 10%;
+  right: 10%;
+  width: 35%;
+  height: 45%;
+}
+
+.area-4 {
+  bottom: 10%;
+  right: 10%;
+  width: 35%;
+  height: 25%;
+}
+
+/* Map Markers */
+.map-marker {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.map-marker:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.marker-danger {
+  background: #dc3545;
+}
+
+.marker-warning {
+  background: #ffc107;
+}
+
+.marker-info {
+  background: #17a2b8;
+}
+
+.marker-success {
+  background: #28a745;
+}
+
+.marker-primary {
+  background: #007bff;
+}
+
+/* Pulse animation for active markers */
+.map-marker::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.4;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-view {
+    height: 300px;
+  }
+  
+  .map-marker {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .area-label {
+    font-size: 9px;
+  }
+}
